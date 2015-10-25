@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+  {% block content %}
+    <center>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <b><em style="color:red;">{{ messages[0] }}</em></b>
+        {% endif %}
+      {% endwith %}
+    </center>
+
+    {% include "search.html" %}
+
+  {% endblock %}
+

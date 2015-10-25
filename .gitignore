@@ -1,0 +1,6 @@
+env
+bin
+*.py[cod]
+*.swp
+*.*~
+*~

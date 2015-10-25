@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+  {% block content %}
+
+    {% include "search.html" %}
+
+    <style>
+        .table td {
+            padding:10px;
+            border-top: solid black 1px;
+        }
+    </style>
+    <center>
+      <h3>Results for "{{ query }}" {{ message }}</h3>
+      <table class="table">
+        <tr><th>Username</th><th>User ID</th><th>First edit</th><th>Most recent edit</th></tr>
+        {% for result in results %}
+          <tr><td><a href="http://www.openstreetmap.org/user/{{ result[1] }}" target="_blank">{{ result[1]}}</td><td>{{ result[0] }}</td><td>{{ result[2] }}</td><td>{{ result[3] }}</td></tr>
+        {% endfor %}
+      </table>
+    </center>
+
+  {% endblock %}
+

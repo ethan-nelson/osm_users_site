@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+  {% block content %}
+
+    {% include "search.html" %}
+
+    <style>
+      p {
+        margin-left: 200px;
+        margin-right: 200px;
+        }
+    </style>
+    <center><h3>About</h3></center>
+    <p>This site uses the <a href="https://github.com/ethan-nelson/osm_diff_tool" target="_blank">OSM Diff Tool</a> on <a href="http://planet.openstreetmap.org/replication/" target="_blank">planet diff files</a> to extract users who have made an edit and the date/time of that edit. If the user does not exist in my database, they will be added; otherwise, their most recent edit date is refreshed.</p>
+    <p>At the moment, I do not have information on users prior to the license change included. This is mostly the result of not spending time yet to ensure the CC-BY-SA diff files are compatible with my diff tool.</p>
+    <p>This database is updated hourly assuming the worker process is enabled. The actual last refresh time was (database query here).</p>
+  {% endblock %}
+

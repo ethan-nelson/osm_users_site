@@ -1,0 +1,19 @@
+{% block content %}
+
+<style>
+  #submit:hover {
+    background: #EEEEEE;
+  }
+</style>
+  <center>
+    <h1><a href="{{ url_for('home') }}" style="text-decoration: none;">Search for an OpenStreetMap user</a></h1>
+    <h3>(<em>Wildcards accepted!</em>)</h3>
+    <form method="post" action="{{ url_for('search') }}">
+      <p><label>Username:  </label><input type="text" name="username" required></p>
+      <p><button type="submit" id="submit">Search</button></p>
+    </form>
+  N.B.: Users must have made at least one edit before the top of the hour to appear in this database.
+  </center>
+
+{% endblock %}
+
