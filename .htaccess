@@ -1,0 +1,4 @@
+RewriteEngine on
+
+RewriteRule ^osm_users_site/?(.*)$ /wsgi-bin/osm_users_site.wsgi/$1 [P,L]
+
