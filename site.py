@@ -71,6 +71,23 @@ def results():
     return render_template('results.html', query=session['username'], message=msg, results=results)
 
 
+@app.route('/newest')
+def newest():
+    try:
+        connection = psycopg2.connect("dbname='osm_users' host='localhost' user='osm_users_view' password='osm'")
+        cursor = connection.cursor()
+        cursor.execute("""SELECT * FROM users ORDER BY start_date DESC;""")
+        results = cursor.fetchmany(250)
+    except:
+        flash('I am very sorry. It seems we are having database issues. Please retry your query or come back again later.')
+        return redirect(url_for('flash_home'))
+
+    qry = 'the newest editors'
+    msg = '(Search limited to the 250 newest users)'
+
+    return render_template('results.html', query=qry, message=msg, results=results)
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')
