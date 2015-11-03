@@ -6,7 +6,8 @@
     <body>
       {% block content %}{% endblock %}
     <br />
-    <center><a href="{{ url_for('about') }}">About</a> | <a href="https://github.com/ethan-nelson/osm_users_site" target="_blank">Fork this on GitHub</a>
+    <center>
+      <a href="{{ url_for('about') }}">About</a> | <a href="{{ url_for('newest') }}">Newest Editors</a> | <a href="https://github.com/ethan-nelson/osm_users_site" target="_blank">GitHub</a>
     </center>
     </body>
   </html>
